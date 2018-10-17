@@ -19,6 +19,7 @@ package reconcile
 import (
 	"time"
 
+	"k8s.io/apimachinery/pkg/runtime/schema"
 	"k8s.io/apimachinery/pkg/types"
 )
 
@@ -37,6 +38,7 @@ type Result struct {
 type Request struct {
 	// NamespacedName is the name and namespace of the object to reconcile.
 	types.NamespacedName
+	schema.GroupVersionKind
 }
 
 /*
